@@ -15,9 +15,10 @@ RUN curl -fsSL https://downloads.apache.org/maven/maven-3/${MAVEN_VERSION}/binar
 
 USER jenkins
 # Set default environment variables
-ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk \
+ENV JAVA_HOME=/opt/java/openjdk \
     MAVEN_HOME=${MAVEN_HOME} \
     PATH=${MAVEN_HOME}/bin:$PATH
+
 # Confirm Java version (optional but useful for debugging)
 RUN java -version && mvn --version
 
