@@ -1,5 +1,5 @@
 # Use the RHEL-based jenkins/inbound-agent as the base image
-FROM jenkins/inbound-agent:4.11-3-jdk11-rhel
+FROM jenkins/inbound-agent:rhel-ubi9-jdk11
 
 # Set default environment variables (optional for further customization)
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk
