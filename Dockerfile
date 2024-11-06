@@ -22,5 +22,7 @@ ENV JAVA_HOME=/opt/java/openjdk \
 # Confirm Java version (optional but useful for debugging)
 RUN java -version && mvn --version
 
+VOLUME /home/jenkins/.m2/repository
+
 # Define the default command (inherited from base image)
 CMD ["jenkins-agent"]
