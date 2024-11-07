@@ -1,5 +1,5 @@
 # Use the RHEL-based jenkins/inbound-agent as the base image
-FROM jenkins/inbound-agent:rhel-ubi9-jdk17
+FROM jenkins/inbound-agent:rhel-ubi9-jdk11
 
 # Set default environment variables (optional for further customization)
 ARG MAVEN_VERSION=3.8.8
@@ -18,9 +18,6 @@ USER jenkins
 ENV JAVA_HOME=/opt/java/openjdk \
     MAVEN_HOME=${MAVEN_HOME} \
     PATH=${MAVEN_HOME}/bin:$PATH
-
-# Confirm Java version (optional but useful for debugging)
-RUN java -version && mvn --version
 
 
 # Define the default command (inherited from base image)
